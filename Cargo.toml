@@ -1,0 +1,12 @@
+[package]
+name = "FileOrganizer"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+dirs = "5"
+clap = { version = "4", features = ["derive"] }
+
+[[bin]]
+name = "organize"
+path = "src/main.rs"
