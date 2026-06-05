@@ -17,7 +17,7 @@ organize ~/Pictures
 
 Not having it defaults to the Downloads Folder 
 
-Also this only works on macos or linux if someone wants to add windows support that would be awesome :D
+Also this probably only works on macos or linux if someone wants to add windows support that would be awesome :D
 
 
 ## Todo
