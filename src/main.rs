@@ -13,7 +13,7 @@ struct Args {
 
 fn main() {
     println!("Starting Organizer :D!");
-    let args = Args::parse();
+    let args = Args::parse();   
     let directory = args.directory.map(PathBuf::from)
         .unwrap_or_else(|| dirs::download_dir().expect("No downloads dir"));
     start_organizer( directory, args.verbose);
