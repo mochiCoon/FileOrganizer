@@ -12,7 +12,6 @@ struct Args {
 }
 
 fn main() {
-    println!("Starting Organizer :D!");
     let args = Args::parse();   
     let directory = args.directory.map(PathBuf::from)
         .unwrap_or_else(|| dirs::download_dir().expect("No downloads dir"));
@@ -21,6 +20,9 @@ fn main() {
 }
 
 fn start_organizer(directory: PathBuf, verbose: bool) {
+    if verbose {
+        println!("Starting Organizer :D!");
+    }
     if let Err(e) = sort_files(directory, verbose) {
         eprintln!("Error: {}", e);
     }
