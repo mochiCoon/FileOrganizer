@@ -11,6 +11,14 @@ organize -v ~/Pictures
 
 you can tell it your path before or after -v
 
+so you could do
+
+organize ~/Pictures
+
+Not having it defaults to the Downloads Folder 
+
+Also this only works on macos or linux if someone wants to add support that would be awesome :D
+
 
 ## Todo
 
