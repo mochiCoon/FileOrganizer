@@ -81,10 +81,10 @@ fn sort_file(name: String, filepath: PathBuf, verbose: bool) {
                 .expect("Failed to move file");
         }
         if name.ends_with(".mp4")
-            ||name.ends_with(".avi")
-            ||name.ends_with(".mov")
-            ||name.ends_with(".wmv")
-            ||name.ends_with(".flv")
+            || name.ends_with(".avi")
+            || name.ends_with(".mov")
+            || name.ends_with(".wmv")
+            || name.ends_with(".flv")
         {
             let path = dirs::video_dir()
                 .expect("No video dir")
