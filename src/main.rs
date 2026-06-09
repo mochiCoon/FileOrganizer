@@ -1,6 +1,7 @@
 use std::fs;
 use std::io;
 use std::path::PathBuf;
+use std::process::exit;
 use clap::Parser;
 
 #[derive(Parser)]
@@ -25,6 +26,10 @@ fn start_organizer(directory: PathBuf, verbose: bool) {
     }
     if let Err(e) = sort_files(directory, verbose) {
         eprintln!("Error: {}", e);
+        exit(2);
+    }
+    if verbose {
+        println!("finished organizing")
     }
 }
 
