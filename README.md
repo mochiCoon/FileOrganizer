@@ -5,6 +5,7 @@ A simple file organizer made with rust
 This project was made because i got pissed off my downloads dir was a fuckin mess
 
 ## Args
+
 -v for verbose
 
 organize -v ~/Pictures
@@ -18,7 +19,6 @@ organize ~/Pictures
 Not having it defaults to the Downloads Folder 
 
 Also this probably only works on macos or linux if someone wants to add windows support that would be awesome :D
-
 
 ## Todo
 

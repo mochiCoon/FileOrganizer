@@ -21,7 +21,7 @@ fn main() {
 
 fn start_organizer(directory: PathBuf, verbose: bool) {
     if verbose {
-        println!("Starting Organizer :D!");
+        println!("start file organizer");
     }
     if let Err(e) = sort_files(directory, verbose) {
         eprintln!("Error: {}", e);
@@ -46,7 +46,7 @@ fn sort_files(directory: PathBuf, verbose: bool) -> io::Result<()> {
 fn sort_file(name: String, filepath: PathBuf, verbose: bool) {
     if !name.starts_with('.') {
         if verbose {
-            println!("try sort file: {}", name);
+            println!("try sort file: {}", filepath.to_string_lossy());
         }
         
         if name.ends_with(".png")
@@ -65,6 +65,12 @@ fn sort_file(name: String, filepath: PathBuf, verbose: bool) {
 
             fs::rename(&filepath, &path)
                 .expect("Failed to move file");
+
+            if verbose {
+                let path_name = path.to_string_lossy();
+                let moved_file_path = filepath.to_string_lossy();
+                println!("Moved file {moved_file_path} to {path_name}");
+            }
         }
         if name.ends_with(".mp3")
             || name.ends_with(".wav")
@@ -79,6 +85,12 @@ fn sort_file(name: String, filepath: PathBuf, verbose: bool) {
 
             fs::rename(&filepath, &path)
                 .expect("Failed to move file");
+
+            if verbose {
+                let path_name = path.to_string_lossy();
+                let moved_file_path = filepath.to_string_lossy();
+                println!("Moved file {moved_file_path} to {path_name}");
+            }
         }
         if name.ends_with(".mp4")
             || name.ends_with(".avi")
@@ -92,6 +104,28 @@ fn sort_file(name: String, filepath: PathBuf, verbose: bool) {
 
             fs::rename(&filepath, &path)
                 .expect("Failed to move file");
+
+            if verbose {
+                let path_name = path.to_string_lossy();
+                let moved_file_path = filepath.to_string_lossy();
+                println!("Moved file {moved_file_path} to {path_name}");
+            }
+        }
+        if name.ends_with(".iso")
+            || name.ends_with(".txt")
+        {
+            let path: PathBuf = dirs::document_dir()
+                .expect("No document dir")
+                .join(&name);
+
+            fs::rename(&filepath, &path)
+                .expect("Failed to move file");
+
+            if verbose {
+                let path_name = path.to_string_lossy();
+                let moved_file_path = filepath.to_string_lossy();
+                println!("Moved file {moved_file_path} to {path_name}");
+            }
         }
     }
 }
