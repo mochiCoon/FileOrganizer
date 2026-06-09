@@ -1,33 +1,138 @@
-# Simple file organizer
+# Simple File Organizer
 
-A simple file organizer made with rust
+A simple file organizer written in Rust.
 
-This project was made because i got pissed off my downloads dir was a fuckin mess
+I made this because my Downloads folder was a complete mess and I got tired of organizing it by hand.
+
+## What It Does
+
+Turns this:
+
+```text
+Downloads/
+├── image.png
+├── song.mp3
+├── movie.mp4
+└── document.pdf
+```
+
+Into this:
+
+```text
+Pictures/image.png
+Music/song.mp3
+Videos/movie.mp4
+Documents/document.pdf
+```
+
+The program scans a directory, detects supported file types, and moves them to the appropriate system folders.
 
 ## Building
 
-To build the project on linux/macos/freebsd/openbsd
-run Build.sh
+### Linux / macOS / BSD
 
-To build the project on windows
-run Build.bat
+Run:
 
-## Args
+```bash
+./Build.sh
+```
 
--v for verbose
+### Windows
 
+Run:
+
+```bat
+Build.bat
+```
+
+## Usage
+
+### Verbose Mode
+
+Use `-v` to enable verbose output.
+
+```bash
 organize -v ~/Pictures
+```
 
-you can tell it your path before or after -v
+### Specifying a Directory
 
-so you could do
+You can provide a directory before or after `-v`.
 
+Examples:
+
+```bash
 organize ~/Pictures
+```
 
-Not having it defaults to the Downloads Folder 
+```bash
+organize -v ~/Pictures
+```
 
-Also this probably only works on macos or linux if someone wants to add windows support that would be awesome :D
+### Default Behavior
+
+If no directory is specified, the program will use your Downloads folder.
+
+```bash
+organize
+```
+
+## Supported File Types
+
+### Images
+
+* png
+* jpg
+* jpeg
+* webp
+* gif
+* tif
+* tiff
+* bmp
+* svg
+
+### Audio
+
+* mp3
+* wav
+* aiff
+* flac
+* alac
+* aac
+
+### Videos
+
+* mp4
+* avi
+* mov
+* wmv
+* flv
+
+### Documents
+
+* iso
+* txt
+* pdf
+* doc
+* docx
+* rtf
+* odt
+
+Anything else is ignored.
+
+## Platform Support
+
+Tested on Linux and macOS.
+
+Windows support is currently untested. If someone wants to make it work properly on Windows, pull requests are welcome.
 
 ## Todo
 
-* [ ] this is not getting any updates :D
+* [ ] Maybe update this someday
+* [ ] Or maybe not :D
+
+## License
+
+This project is licensed under the MIT License.
+
+See the LICENSE file for details.
