@@ -133,6 +133,6 @@ Windows support is currently untested. If someone wants to make it work properly
 
 ## License
 
-This project is licensed under the MIT License.
+This project is licensed under the DO WHATEVER THE FUCK YOU WANT WITH IT LICENSE (DWWYWWI).
 
 See the LICENSE file for details.
