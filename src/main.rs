@@ -1,8 +1,4 @@
-use std::fs;
-use std::io;
-use std::path::PathBuf;
-use std::process::exit;
-use clap::Parser;
+use {std::fs, std::io, std::path::PathBuf,std::process::exit, clap::Parser};
 
 #[derive(Parser)]
 struct Args {
@@ -118,6 +114,11 @@ fn sort_file(name: String, filepath: PathBuf, verbose: bool) {
         }
         if name.ends_with(".iso")
             || name.ends_with(".txt")
+            || name.ends_with(".pdf")
+            || name.ends_with(".doc")
+            || name.ends_with(".docx")
+            || name.ends_with("rtf")
+            || name.ends_with(".odt")
         {
             let path: PathBuf = dirs::document_dir()
                 .expect("No document dir")
