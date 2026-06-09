@@ -4,6 +4,14 @@ A simple file organizer made with rust
 
 This project was made because i got pissed off my downloads dir was a fuckin mess
 
+## Building
+
+To build the project on linux/macos/freebsd/openbsd
+run Build.sh
+
+To build the project on windows
+run Build.bat
+
 ## Args
 
 -v for verbose
