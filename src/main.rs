@@ -117,7 +117,7 @@ fn sort_file(name: String, filepath: PathBuf, verbose: bool) {
             || name.ends_with(".pdf")
             || name.ends_with(".doc")
             || name.ends_with(".docx")
-            || name.ends_with("rtf")
+            || name.ends_with(".rtf")
             || name.ends_with(".odt")
         {
             let path: PathBuf = dirs::document_dir()
